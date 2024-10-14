@@ -160,7 +160,7 @@ const Download = () => {
   return (
     <div className={Styles.container}>
       <div className={Styles.selectContainer}>
-        <label className={Styles.label}>Select Date:</label>
+        <label className={Styles.label}>Select a Date & Download:</label>
         <div className={Styles.inputContainer}>
         <input
           className={Styles.input}
