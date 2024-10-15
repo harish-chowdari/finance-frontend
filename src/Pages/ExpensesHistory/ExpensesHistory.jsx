@@ -34,6 +34,11 @@ const ExpensesHistory = () => {
     return <div>Loading...</div>;
   }
 
+  const totalAmount = filteredExpenses.reduce(
+    (acc, expense) => acc + expense.amount,
+    0
+  );
+
   return (
     <div className={Styles.container}>
       <div className={Styles.selectContainer}>
@@ -77,6 +82,13 @@ const ExpensesHistory = () => {
               <td className={Styles.td}>{expense.date.slice(0, 10)}</td>
             </tr>
           ))}
+
+          <tr className={Styles.tr}>
+            <td className={Styles.td}></td>
+            <td className={Styles.total}>Total</td>
+            <td className={Styles.total}>{totalAmount}</td>
+            <td className={Styles.td}></td>
+          </tr>
           {filteredExpenses.length === 0 && (
             <tr className={Styles.tr}>
               <td colSpan="3" className={Styles.td}>
